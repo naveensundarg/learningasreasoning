@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>A Million Reasoning Problems
+Datasets for Learning to Reason</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="main.tex"> 
+<link rel="stylesheet" type="text/css" href="main.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                          
+
+                                                                          
+                                                                          
+
+                                                                          
+
+<h2 class="titleHead">A Million Reasoning Problems<br />
+Datasets for Learning to Reason</h2>
+<div class="author" ></div><br />
+<div class="date" ><span 
+class="ptmr7t-x-x-144">May 30, 2018</span></div>
+   </div>
+   <h3 class="sectionHead"><span class="titlemark">1    </span> <a 
+ id="x1-10001"></a>Introduction</h3>
+<!--l. 62--><p class="noindent" >There is a growing recent interest in incorporating learning in reasoning systems. Such
+efforts fall largely into two different areas that we term <span 
+class="ptmb7t-x-x-120">Area I </span>and <span 
+class="ptmb7t-x-x-120">Area II</span>. We give a
+quick overview of what a reasoning system does before describing these two
+areas.
+<!--l. 68--><p class="indent" >   In general, a reasoning system can be conceived of as a search through
+some space. This search usually relies on a number of hand-written heuristics.
+Theorem provers, which lie at the extreme end of reasoning systems (as even
+trivial-first order provers are capable of simulating Turing-level computation),
+make this quite explicit, as you can specify these heuristics as an end-user. For
+instance, in first-order resolution theorem provers, the goal is to find a sequence of
+resolution operations given an intial set of clauses <span 
+class="cmmi-12">C </span>resulting in an empty
+clause. At any point in the search the prover has to choose a set of clauses
+from overall set of clauses it has derived. Theorem provers use heuristics such
+as the size of a clause, the complexity of a clause, age of a clause etc to do
+so.
+<!--l. 81--><p class="indent" >   Efforts in <span 
+class="ptmb7t-x-x-120">Area I </span>revolve around selecting or computing an appropriate set of
+                                                                          
+
+                                                                          
+heuristics using some form of learning while not tampering with the rest of the search
+process. Efforts in <span 
+class="ptmb7t-x-x-120">Area II </span>aim to learn a function from scratch that does the entire
+search. While there have been quite significant progress in Area I, there has been very
+little progress in Area II. We feel that one of the main reasons, is that there is no
+standard dataset that can leveraged for Area II. Datasets for Area I are built up with
+learning heuristics as a goal.
+<!--l. 92--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2    </span> <a 
+ id="x1-20002"></a>Existing Datasets</h3>
+<!--l. 94--><p class="noindent" >In order to test learning systems that aim to do reasoning from scratch we need a set of
+datasets of gradually increasing complexity. For instance, while bAbI has a dataset that
+is termed as &#8220;Basic Deduction&#8221;, the reasoning can accomplished in first-order logic with
+just <span 
+class="cmr-12">&#x03A0;</span><sub><span 
+class="cmr-8">1</span></sub> formulae.
+<!--l. 101--><p class="indent" >
+      <div class="quote">
+      <!--l. 102--><p class="noindent" >Sheep are afraid of wolves.<br 
+class="newline" />Cats are afraid of dogs. <br 
+class="newline" />Mice are afraid of cats.<br 
+class="newline" />Gertrude is a sheep.<br 
+class="newline" />What is Gertrude afraid of? A:wolves<br 
+class="newline" /></div>
+<!--l. 109--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                          
+
+                                                                          
+<a 
+ id="x1-20011"></a>
+                                                                          
+
+                                                                          
+<!--l. 112--><p class="noindent" ><img 
+src="./babi.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1: </span><span  
+class="content">bAbI Deduction Task</span></div><!--tex4ht:label?: x1-20011 -->
+                                                                          
+
+                                                                          
+<!--l. 115--><p class="indent" >   </div><hr class="endfigure">
+   <h3 class="sectionHead"><span class="titlemark">3    </span> <a 
+ id="x1-30003"></a>The Dataset</h3>
+<!--l. 122--><p class="noindent" >We have as parameters <span 
+class="cmr-12">(</span><span 
+class="cmmi-12">n,n</span><sub><span 
+class="cmmi-8">P</span> </sub><span 
+class="cmmi-12">,n</span><sub><span 
+class="cmmi-8">f</span></sub><span 
+class="cmmi-12">,n</span><sub><span 
+class="cmmi-8">w</span></sub><span 
+class="cmr-12">)</span>, where <span 
+class="cmmi-12">n </span>is the number of clauses per problem,
+<span 
+class="cmmi-12">n</span><sub><span 
+class="cmmi-8">P</span> </sub> is the total number of predicate symbols, <span 
+class="cmmi-12">n</span><sub><span 
+class="cmmi-8">f</span></sub> is the total number of function symbols,
+and <span 
+class="cmmi-12">n</span><sub><span 
+class="cmmi-8">w</span></sub> is the maximum size of each clause.<br 
+class="newline" />
+   <div class="tabular">
+ <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td11">Logic (Complexity)</td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-2"  
+class="td11">Parameters</td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-3"  
+class="td11">Instances</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td11">Propositional           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"  
+class="td11">(3,3,0,3)    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-3"  
+class="td11">50k         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td11">Propositional           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-2"  
+class="td11">(4,4,0,4)    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-3"  
+class="td11">50k         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td11">Propositional           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-2"  
+class="td11">(5,5,0,5)    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-3"  
+class="td11">10k         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-1"  
+class="td11">Quantifier-free FOL </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-2"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-3"  
+class="td11">      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-1"  
+class="td11"><span 
+class="cmr-12">&#x03A3;</span><sub><span 
+class="cmr-8">1</span></sub> FOL                    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-2"  
+class="td11">&#8211;                </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-3"  
+class="td11">      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-1"  
+class="td11"><span 
+class="cmr-12">&#x03A0;</span><sub><span 
+class="cmr-8">1</span></sub> FOL                    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-2"  
+class="td11">&#8211;                </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-3"  
+class="td11">      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-1"  
+class="td11"><span 
+class="cmr-12">&#x03A0;</span><sub><span 
+class="cmr-8">2</span></sub> FOL                    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-2"  
+class="td11">&#8211;                </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-3"  
+class="td11">      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-9-1"  
+class="td11">              </td> </tr></table></div>
+<!--l. 147--><p class="noindent" ><span 
+class="ptmb7t-x-x-120">Modal Dataset</span>: We have as parameters <span 
+class="cmr-12">(</span><span 
+class="cmmi-12">n,n</span><sub><span 
+class="cmmi-8">P</span> </sub><span 
+class="cmmi-12">,n</span><sub><span 
+class="cmmi-8">f</span></sub><span 
+class="cmmi-12">,n</span><sub><span 
+class="cmmi-8">w</span></sub><span 
+class="cmmi-12">,n</span><sub><span 
+class="cmmi-8">a</span></sub><span 
+class="cmr-12">)</span>, where <span 
+class="cmmi-12">n </span>is the number of
+clauses per problem, <span 
+class="cmmi-12">n</span><sub><span 
+class="cmmi-8">P</span> </sub> is the total number of predicate symbols, <span 
+class="cmmi-12">n</span><sub><span 
+class="cmmi-8">f</span></sub> is the total number
+of function symbols, <span 
+class="cmmi-12">n</span><sub><span 
+class="cmmi-8">w</span></sub> is the maximum size of each clause and <span 
+class="cmmi-12">n</span><sub><span 
+class="cmmi-8">a</span></sub> is the number of
+agents.<br 
+class="newline" />
+   <div class="tabular">
+ <table id="TBL-3" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1"><col 
+id="TBL-3-2"><col 
+id="TBL-3-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-1"  
+class="td11">Logic (Complexity)</td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-2"  
+class="td11">Parameters</td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-3"  
+class="td11">Instances</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-1"  
+class="td11">Propositional           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-2"  
+class="td11">(3,3,0,3)    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-3"  
+class="td11">      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-1"  
+class="td11">Propositional           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-2"  
+class="td11">(3,3,0,3)    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-3"  
+class="td11">      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-1"  
+class="td11">Propositional           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-2"  
+class="td11">(5,5,0,5)    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-3"  
+class="td11">      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-1"  
+class="td11">Quantifier-free FOL </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-2"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-3"  
+class="td11">      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-6-1"  
+class="td11"><span 
+class="cmr-12">&#x03A3;</span><sub><span 
+class="cmr-8">1</span></sub> FOL                    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-6-2"  
+class="td11">&#8211;                </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-6-3"  
+class="td11">      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-7-1"  
+class="td11"><span 
+class="cmr-12">&#x03A0;</span><sub><span 
+class="cmr-8">1</span></sub> FOL                    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-7-2"  
+class="td11">&#8211;                </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-7-3"  
+class="td11">      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-8-1"  
+class="td11">              </td> </tr></table></div>
+    
+</body></html> 
+
+                                                                          
+
+
